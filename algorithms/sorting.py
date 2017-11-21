@@ -3,6 +3,7 @@ def insertion_sort(data, reverse=False):
     Simple implementation of insert_sort algorithm.
 
     :param list data: unsorted list
+    :param bool reverse: sort desc if True else asc
 
     :rtype list
     :return: sorted list
@@ -29,3 +30,23 @@ def insertion_sort(data, reverse=False):
         data[idx_2 + 1] = key
 
     return data
+
+
+def selection_sort(data, reverse=False):
+    """
+    Simple implementation of selection_sort algorithm.
+
+    :param list data: unsorted list
+    :param bool reverse: sort desc if True else asc
+
+    :rtype list
+    :return: sorted list
+    """
+    out = []
+    for i in range(0, len(data)-1):
+        out.append(min(data)) if not reverse else out.append(max(data))
+        data.remove(out[-1])
+    return out + data
+
+
+
